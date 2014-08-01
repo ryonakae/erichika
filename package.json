@@ -1,0 +1,18 @@
+{
+  "name": "KKE",
+  "version": "1.0.0",
+  "description": "A Clever and Cute HTML5 Template",
+  "main": "gulpfile.js",
+  "author": "RYO NAKAE",
+  "homepage": "https://github.com/ryonakae/kke",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "*",
+    "coffee-script": "*",
+    "gulp": "^3.8.1",
+    "gulp-autoprefixer": "*",
+    "gulp-compass": "*",
+    "gulp-load-plugins": "*"
+  }
+}

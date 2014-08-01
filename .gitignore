@@ -1,1 +1,13 @@
-.sass-cache
+# Ignore cache
+.sass-cache/
+.cache/
+
+# OSX
+.DS_Store
+Thumbs.db
+
+# Other
+*.codekit
+*.sublime-workspace
+# *.sublime-project
+node_modules/
