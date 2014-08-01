@@ -5,16 +5,16 @@
 KKEはかしこくてかわいいHTML5テンプレートです。
 
 
-# Download
+## Download
 
 [こちら](https://github.com/ryonakae/kke/archive/master.zip)からダウンロードしてください。
 
-## git clone
+### git clone
 
     $ git clone https://github.com/ryonakae/kke.git
 
 
-# Feature
+## Feature
 
 * HTML5
 * CSS3 - Sass (SASS) + Compass
@@ -22,45 +22,45 @@ KKEはかしこくてかわいいHTML5テンプレートです。
 * Gulp
 
 
-# Gulp
+## Gulp
 
 KKEは[Gulp](http://gulpjs.com/)を使用して開発が可能です。
 
-## Gulpで何やってるか
+### Gulpで何やってるか
 * ブラウザの自動リロード
 * Sass + Compassのコンパイル
 * CoffeeScriptのコンパイル
 * 画像ファイルの圧縮
 
 
-# How to use KKE
-## 1. Nodeのインストール
+## How to use KKE
+### 1. Nodeのインストール
 [node.js](http://nodejs.org/)を参照してnode.jsをインストールしてください。
 
-## 2. Gulpのインストール
+### 2. Gulpのインストール
 
     $ npm install --global gulp
 
 時と場合によっては`$ sudo npm install --global gulp`だったりします
 
-## 3. ディレクトリに移動
+### 3. ディレクトリに移動
 
     $ cd kke
     
 ダウンロードして解凍したり`git clone`したディレクトリのことです
 
-## 4. Gulpプラグインをインストール
+### 4. Gulpプラグインをインストール
 
     $ npm install
 
-## 5. Gulpの実行
+### 5. Gulpの実行
 
     $ gulp
 
 `http://localhost:3000/`というURLでブラウザの新規タブが開くので、あとはファイルを変更するたびにブラウザが自動で更新されます。
 
 
-# Sass(SASS) + Compass
+## Sass(SASS) + Compass
 
 KKEではCSSの拡張メタ言語にSass(SASS) + Compassを採用しています。
 
@@ -68,7 +68,7 @@ KKEではCSSの拡張メタ言語にSass(SASS) + Compassを採用しています
 * CompassのURLヘルパーが便利すぎるので(`image-url`みたいなアレです)
 * Compassはベンダープレフィックスが余計に付くのでアレという意見もあるけど、[Autoprefixer](https://github.com/ai/autoprefixer)使えばどうとでもなる
 
-## ファイル構成
+### ファイル構成
 
 * _normalize.scss
 * _mixin.sass
@@ -76,15 +76,15 @@ KKEではCSSの拡張メタ言語にSass(SASS) + Compassを採用しています
 * _grid.sass
 * _media-queries.sass
 
-## _normalize.scss
+### _normalize.scss
 
 もう眠いので続きはまた今度書く
 
 
-# License
+## License
 [MIT License](https://github.com/ryonakae/kke/blob/master/README.md)
 
-## Components
+### Components
 
 * Normalize.css: MIT license
 * jQuery: MIT license
@@ -100,7 +100,7 @@ KKEではCSSの拡張メタ言語にSass(SASS) + Compassを採用しています
 * CoffeeScript: MIT license
 
 
-# Author
+## Author
 
 ### RYO NAKAE
 
