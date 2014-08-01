@@ -9,10 +9,13 @@
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "*",
-    "coffee-script": "*",
     "gulp": "^3.8.1",
     "gulp-autoprefixer": "*",
     "gulp-compass": "*",
-    "gulp-load-plugins": "*"
+    "gulp-coffee": "*",
+    "gulp-imagemin": "*",
+    "gulp-load-plugins": "*",
+    "gulp-plumber": "*",
+    "gulp-uglify": "*"
   }
 }
