@@ -1,6 +1,6 @@
 # KKE
 
-## A Clever and Cute HTML5 Template.
+## A Cute and Clever HTML5 Template.
 
 KKEはかしこくてかわいいHTML5テンプレートです。
 
@@ -111,3 +111,9 @@ Web Designer in Kyoto, Japan.
 * [JAYPEG](https://jypg.net/ryo_dg)
 * [Dribbble](https://dribbble.com/ryo_dg)
 * [GitHub](https://github.com/ryonakae)
+
+
+## Changelog
+
+### 1.0.0 (2014-08-02)
+* Initial Release
