@@ -2,7 +2,7 @@
 
 ## A Cute and Clever HTML5 Template.
 
-KKEはかしこくてかわいいHTML5テンプレートです。
+KKEは[かしこくてかわいい](http://d.pr/i/QMut)HTML5テンプレートです。
 
 
 ## Download
@@ -78,7 +78,49 @@ KKEではCSSの拡張メタ言語にSass(SASS) + Compassを採用しています
 
 ### _normalize.scss
 
-もう眠いので続きはまた今度書く
+[normalize.css](http://necolas.github.io/normalize.css/)の拡張子を`.scss`に変更したものです。
+
+### _mixin.sass
+
+便利なmixinをまとめたものです。
+
+### _variable.sass
+
+サイト全体の背景色や文字色など、共通して使える変数をまとめたものです。
+
+### _grid.sass
+
+簡単なグリッドシステムです。
+
+#### Example
+
+    <div class="l-container">
+      <div class="l-row">
+        <div class="l-grid-4">
+          Grid 4
+        </div>
+        <div class="l-grid-4">
+          Grid 4
+        </div>
+        <div class="l-grid-4">
+          Grid 4
+        </div>
+      </div>
+    </div>
+
+### _media-queries.sass
+
+Media Queriesをまとめて書けるファイルです。
+
+* Retinaディスプレイ
+* PC(大きい画面の場合)
+* PC
+* タブレット
+* タブレット(小さい画面の場合)
+* スマートフォン
+
+以上の場合のスタイルを書くことができます。  
+ブレークポイントなどを変更したい場合は、ファイル上部にある`// Settings`の箇所のmixinを修正してください。
 
 
 ## License
@@ -114,6 +156,10 @@ Web Designer in Kyoto, Japan.
 
 
 ## Changelog
+
+### 1.0.1 (2014-08-02)
+* head内の要素を整理
+* `_media-queries.sass`にブレークポイント設定のmixinを移動
 
 ### 1.0.0 (2014-08-02)
 * Initial Release
