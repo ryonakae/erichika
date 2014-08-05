@@ -1,21 +1,22 @@
 {
   "name": "KKE",
-  "version": "1.0.0",
-  "description": "A Clever and Cute HTML5 Template",
-  "main": "gulpfile.js",
+  "description": "A Cute and Clever HTML5 Template.",
   "author": "RYO NAKAE",
   "homepage": "https://github.com/ryonakae/kke",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
-    "browser-sync": "*",
-    "gulp": "^3.8.1",
-    "gulp-autoprefixer": "*",
-    "gulp-compass": "*",
-    "gulp-coffee": "*",
-    "gulp-imagemin": "*",
-    "gulp-load-plugins": "*",
-    "gulp-plumber": "*",
-    "gulp-uglify": "*"
+    "browser-sync": "^1.3.0",
+    "coffee-script": "^1.7.1",
+    "gulp": "^3.8.5",
+    "gulp-autoprefixer": "^0.0.8",
+    "gulp-compass": "^1.2.0",
+    "gulp-coffee": "^2.1.1",
+    "gulp-imagemin": "^0.6.1",
+    "gulp-load-plugins": "^0.5.3",
+    "gulp-plumber": "^0.6.4",
+    "gulp-uglify": "^0.3.1"
+  },
+  "engines": {
+    "node": ">=0.10.0"
   }
 }
