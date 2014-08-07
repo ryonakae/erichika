@@ -7,7 +7,7 @@ KKEは[かしこくてかわいい](http://d.pr/i/QMut)HTML5テンプレート�
 
 ## Download
 
-[こちら](https://github.com/ryonakae/kke/archive/master.zip)からダウンロードしてください。
+[こちら](https://github.com/ryonakae/kke/archive/master.zip)からダウンロードしてください。もしくは`git clone`でリポジトリをクローンしてください。
 
 ### git clone
 
@@ -16,9 +16,9 @@ KKEは[かしこくてかわいい](http://d.pr/i/QMut)HTML5テンプレート�
 
 ## Feature
 
-* かしこくてかわいい、HTML5テンプレート
-* Sass(SASS) + Compass + CoffeeScriptで開発ができる
-* Gulpでのブラウザ自動リロードやファイルのコンパイル、画像の圧縮に対応
+* かしこくてかわいい、HTML5+CSS3テンプレート
+* Sass(SASS) + CoffeeScriptで開発ができる
+* Gulpでのブラウザ自動リロードや画像の圧縮に対応
 
 
 ## Gulp
@@ -27,7 +27,7 @@ KKEは[Gulp](http://gulpjs.com/)を使用して開発が可能です。
 
 ### Gulpで何やってるか
 * ブラウザの自動リロード
-* Sass + Compassのコンパイル
+* Sassのコンパイル + [Autoprefixer](https://github.com/ai/autoprefixer)でベンダープレフィックスを自動付与
 * CoffeeScriptのコンパイル
 * 画像ファイルの圧縮
 
@@ -53,8 +53,6 @@ Homebrew経由でのインストールでも[オケオケオッケー](http://d.
 
     $ npm install
 
-どうでもいいですけど`npm i`でも同じです
-
 ### 5. Gulpの実行
 
     $ gulp
@@ -62,15 +60,9 @@ Homebrew経由でのインストールでも[オケオケオッケー](http://d.
 `http://localhost:3000/`というURLでブラウザの新規タブが開くので、あとはファイルを変更するたびにブラウザが自動で更新されます。
 
 
-## Sass(SASS) + Compass
+## Sass(SASS)
 
-KKEではCSSの拡張メタ言語にSass(SASS) + Compassを採用しています。
-
-* SASS(.sass)だとmixin書くのが簡単すぎてついついmixin多用したくなるので(Compassはあらかじめ便利なmixinが沢山用意されています)
-* CompassのURLヘルパーが便利すぎるので(`image-width`みたいなやつ)
-* Compassはベンダープレフィックスが余計に付くのでアレという意見もあるけど、[Autoprefixer](https://github.com/ai/autoprefixer)使えばどうとでもなる
-
-デメリットとしては、`gulp-compass`のせいか分かりませんけど、コンパイルにちょっと時間がかかることです
+KKEではCSSの拡張メタ言語にSass(SASS)を採用しています。
 
 ### ファイル構成
 
@@ -101,22 +93,15 @@ KKEではCSSの拡張メタ言語にSass(SASS) + Compassを採用しています
 
 mixinじゃなくてextendですが、CSSアニメーションを簡単に実装できるextendも利用できます。
 
-##### extend
-
-    %animation
-      +transition-duration(250ms)
-      +transition-timing-function($ease)
-      +transition-property(all)
-
 ##### 呼び出すとき
 
-    .btn-example
+    .btn
       @extend %animation
 
       &:hover
         opacity: 0.7
         
-みたいに書くと、`.btn-example`にマウスオーバーした時に、アニメーションしながら透過します。
+みたいに書くと、`.btn`にマウスオーバーした時に、アニメーションしながら透過します。
 
 ### _variable.sass
 
@@ -147,16 +132,7 @@ mixinじゃなくてextendですが、CSSアニメーションを簡単に実装
 汎用性のあるクラスをまとめたものです。  
 ボタンなど、共通で使いまわすパーツ(モジュール)はこのファイルに書くと良さそうです。
 
-| クラス名 | なにできるか |
-|-----|-----|
-| .align-center | テキストを中央寄せにする |
-| .align-right | テキストを右寄せにする |
-| .float-left | 要素を左にフロートさせる |
-| .float-right | 要素を右にフロートさせる |
-| .mt00em 〜 .mt100em | `margin-top: 0em` 〜 `margin-top: 10em`まで、0.5em刻みの20段階で適用 |
-| .mb00em 〜 .mb100em | `margin-bottom: 0em` 〜 `margin-bottom: 10em`まで、0.5em刻みの20段階で適用 |
-| .pt00em 〜 .pt100em | `padding-top: 0em` 〜 `padding-top: 10em`まで、0.5em刻みの20段階で適用 |
-| .pb00em 〜 .pb100em | `padding-bottom: 0em` 〜 `padding-bottom: 10em`まで、0.5em刻みの20段階で適用 |
+`.align-center`や`.mt10`のような汎用クラスを最初から用意しています。使用しない場合は無駄なので、削除やコメントアウトしつつお使いください。
 
 ### _media-queries.sass
 
@@ -173,7 +149,19 @@ Media Queriesをまとめて書けるファイルです。
 ブレークポイントなどを変更したい場合は、`_mixin.sass`にある`// Media Queries Settings`のmixinを修正してください。
 
 
+## Image
+
+KKEでは、Gulpの実行時に`img`ディレクトリを監視して、画像が追加されると`dist/img`ディレクトリに圧縮した画像を保存します。納品時には`img`ディレクトリではなく`dist/img`ディレクトリを代わりに用意したりすると良いと思います。  
+
+### 対応拡張子
+
+* jpg
+* png
+* gif
+
+
 ## License
+
 [MIT License](https://github.com/ryonakae/kke/blob/master/README.md)
 
 ### Components
@@ -188,7 +176,6 @@ Media Queriesをまとめて書けるファイルです。
 * html5shiv: MIT/GPL license
 * Gulp.js: MIT license
 * Sass: MIT license
-* Compass: CC3.0
 * CoffeeScript: MIT license
 
 
@@ -206,6 +193,17 @@ Web Designer in Kyoto, Japan.
 
 
 ## Changelog
+
+### 1.1.0 (2014-08-07)
+* Compass使うのやめた
+* SassのSourceMapに対応
+* `config.rb`を削除
+* `gulpfile.coffee`の修正
+* `_module.sass`を修正
+  * float系のクラスを削除
+  * PCとSPで簡単に表示/非表示を切り替えられる`.pc`と`.sp`を追加
+  * `.mt10`みたいな汎用クラスの、emだけではなくpx版を追加
+* `README.md`を加筆修正
 
 ### 1.0.2 (2014-08-05)
 * `gulpfile.coffee`の修正

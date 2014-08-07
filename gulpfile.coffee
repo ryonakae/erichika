@@ -4,11 +4,10 @@ browserSync = require('browser-sync')
 
 # BrowserSync
 gulp.task 'browserSync', ->
-  browserSync.init(null, {
+  browserSync.init null,
     # open: false
     server:
       baseDir: './'
-  })
 
 ###
 Tasks
@@ -17,18 +16,19 @@ Tasks
 gulp.task 'browserSync-Reload', ->
   browserSync.reload()
 
-# Compass
-gulp.task 'compass', ->
+# Sass
+gulp.task 'sass', ->
   gulp
     .src 'css/*.sass'
     .pipe $.plumber()
-    .pipe $.compass({
-      config_file: 'config.rb'
-      css: 'css/'
-      sass: 'css/'
-    })
-    .pipe $.autoprefixer('last 2 versions', 'ie 8', 'ie 9')
+    .pipe $.rubySass
+      style: 'expanded'
+      sourcemap: true
+      sourcemapPath: '../css/'
+      noCache: true
+    .pipe $.autoprefixer 'last 2 version', 'ie 8', 'ie 9'
     .pipe gulp.dest 'css/'
+    .pipe $.filter '**/*.css'
     .pipe browserSync.reload stream:true
 
 # CoffeeScript
@@ -50,8 +50,8 @@ gulp.task 'imagemin', ->
     .pipe browserSync.reload stream:true, once:true
 
 # Watch
-gulp.task 'default', ['browserSync', 'compass', 'coffee', 'imagemin'], ->
+gulp.task 'default', ['browserSync', 'sass', 'coffee', 'imagemin'], ->
   gulp.watch './**/*.html', ['browserSync-Reload']
-  gulp.watch 'css/**/*.sass', ['compass']
+  gulp.watch 'css/**/*.sass', ['sass']
   gulp.watch 'js/**/*.coffee', ['coffee']
   gulp.watch 'img/**/*.{png,jpg,gif}', ['imagemin']
