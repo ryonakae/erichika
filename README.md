@@ -1,17 +1,17 @@
-# KKE
+# Eri
 
 ## A Cute and Clever HTML5 Template.
 
-KKEは[かしこくてかわいい](http://d.pr/i/QMut)HTML5テンプレートです。
+Eriは[かしこくてかわいい](http://d.pr/i/QMut)HTML5テンプレートです。
 
 
 ## Download
 
-[こちら](https://github.com/ryonakae/kke/archive/master.zip)からダウンロードしてください。もしくは`git clone`でリポジトリをクローンしてください。
+[こちら](https://github.com/ryonakae/eri/archive/master.zip)からダウンロードしてください。もしくは`git clone`でリポジトリをクローンしてください。
 
 ### git clone
 
-    $ git clone https://github.com/ryonakae/kke.git
+    $ git clone https://github.com/ryonakae/eri.git
 
 
 ## Feature
@@ -23,7 +23,7 @@ KKEは[かしこくてかわいい](http://d.pr/i/QMut)HTML5テンプレート�
 
 ## Gulp
 
-KKEは[Gulp](http://gulpjs.com/)を使用して開発が可能です。
+Eriは[Gulp](http://gulpjs.com/)を使用して開発が可能です。
 
 ### Gulpで何やってるか
 * ブラウザの自動リロード
@@ -45,7 +45,7 @@ Homebrew経由でのインストールでも[オケオケオッケー](http://d.
 
 ### 3. ディレクトリに移動
 
-    $ cd kke
+    $ cd eri
     
 ダウンロードして解凍したり`git clone`したディレクトリのことです
 
@@ -62,7 +62,7 @@ Homebrew経由でのインストールでも[オケオケオッケー](http://d.
 
 ## Sass(SASS)
 
-KKEではCSSの拡張メタ言語にSass(SASS)を採用しています。
+EriではCSSの拡張メタ言語にSass(SASS)を採用しています。
 
 ### ファイル構成
 
@@ -151,7 +151,7 @@ Media Queriesをまとめて書けるファイルです。
 
 ## Image
 
-KKEでは、Gulpの実行時に`img`ディレクトリを監視して、画像が追加されると`dist/img`ディレクトリに圧縮した画像を保存します。納品時には`img`ディレクトリではなく`dist/img`ディレクトリを代わりに用意したりすると良いと思います。  
+Eriでは、Gulpの実行時に`img`ディレクトリを監視して、画像が追加されると`dist/img`ディレクトリに圧縮した画像を保存します。納品時には`img`ディレクトリではなく`dist/img`ディレクトリを代わりに用意したりすると良いと思います。  
 
 ### 対応拡張子
 
@@ -162,7 +162,7 @@ KKEでは、Gulpの実行時に`img`ディレクトリを監視して、画像�
 
 ## License
 
-[MIT License](https://github.com/ryonakae/kke/blob/master/README.md)
+[MIT License](https://github.com/ryonakae/eri/blob/master/LICENSE)
 
 ### Components
 
@@ -192,7 +192,15 @@ Web Designer in Kyoto, Japan.
 * [GitHub](https://github.com/ryonakae)
 
 
+## Special Thanks
+
+[Rin](https://github.com/sanographix/rin-html-template)
+
 ## Changelog
+
+### 1.1.1 (2014-08-10)
+* [名前変更](http://d.pr/i/Eq7v)
+* `.sass`と`.scss`の両方を監視対象に
 
 ### 1.1.0 (2014-08-07)
 * Compass使うのやめた
@@ -203,13 +211,11 @@ Web Designer in Kyoto, Japan.
   * float系のクラスを削除
   * PCとSPで簡単に表示/非表示を切り替えられる`.pc`と`.sp`を追加
   * `.mt10`みたいな汎用クラスの、emだけではなくpx版を追加
-* `README.md`を加筆修正
 
 ### 1.0.2 (2014-08-05)
 * `gulpfile.coffee`の修正
 * `_module.sass`を追加
 * Media Queriesのmixinの記述場所おかしいせいでコンパイルエラー出てたのを修正
-* `README.md`を加筆修正
 
 ### 1.0.1 (2014-08-02)
 * head内の要素を整理
