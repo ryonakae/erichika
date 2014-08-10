@@ -19,7 +19,7 @@ gulp.task 'browserSync-Reload', ->
 # Sass
 gulp.task 'sass', ->
   gulp
-    .src 'css/*.sass'
+    .src 'css/*.{sass,scss}'
     .pipe $.plumber()
     .pipe $.rubySass
       style: 'expanded'
@@ -52,6 +52,6 @@ gulp.task 'imagemin', ->
 # Watch
 gulp.task 'default', ['browserSync', 'sass', 'coffee', 'imagemin'], ->
   gulp.watch './**/*.html', ['browserSync-Reload']
-  gulp.watch 'css/**/*.sass', ['sass']
+  gulp.watch 'css/**/*.{sass,scss}', ['sass']
   gulp.watch 'js/**/*.coffee', ['coffee']
   gulp.watch 'img/**/*.{png,jpg,gif}', ['imagemin']
