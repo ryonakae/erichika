@@ -562,6 +562,12 @@ hr {
     display: block;
   }
 }
+.clearfix:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
 .mt0 {
   margin-top: 0px;
 }

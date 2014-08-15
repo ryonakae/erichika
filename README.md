@@ -1,32 +1,33 @@
-# Eri
+# Erichika
 
 ## A Cute and Clever HTML5 Template.
 
-Eriは[かしこくてかわいい](http://d.pr/i/QMut)HTML5テンプレートです。
+Erichikaは[かしこくてかわいい](http://cl.ly/image/3F1j3r0u1I00)HTML5テンプレートです。
 
 
 ## Download
 
-[こちら](https://github.com/ryonakae/eri/archive/master.zip)からダウンロードしてください。もしくは`git clone`でリポジトリをクローンしてください。
+[こちら](https://github.com/ryonakae/erichika/archive/master.zip)からダウンロードしてください。もしくは`git clone`でリポジトリをクローンしてください。
 
 ### git clone
 
-    $ git clone https://github.com/ryonakae/eri.git
+    $ git clone https://github.com/ryonakae/erichika.git
 
 
 ## Feature
 
-* かしこくてかわいい、HTML5+CSS3テンプレート
+* (かしこくてかわいい)HTML5+CSS3テンプレート
 * Sass(SASS) + CoffeeScriptで開発ができる
 * Gulpでのブラウザ自動リロードや画像の圧縮に対応
 
 
+
 ## Gulp
 
-Eriは[Gulp](http://gulpjs.com/)を使用して開発が可能です。
+Erichikaは[Gulp](http://gulpjs.com/)を使用しての開発が可能です。
 
 ### Gulpで何やってるか
-* ブラウザの自動リロード
+* [BrowserSync](http://www.browsersync.io/)によるブラウザの自動リロード
 * Sassのコンパイル + [Autoprefixer](https://github.com/ai/autoprefixer)でベンダープレフィックスを自動付与
 * CoffeeScriptのコンパイル
 * 画像ファイルの圧縮
@@ -35,7 +36,7 @@ Eriは[Gulp](http://gulpjs.com/)を使用して開発が可能です。
 ## How to use KKE
 ### 1. Nodeのインストール
 [node.js](http://nodejs.org/)を参照してnode.jsをインストールしてください。  
-Homebrew経由でのインストールでも[オケオケオッケー](http://d.pr/i/58pd)
+Homebrew経由でのインストールでも[オケオケオッケー](http://cl.ly/image/36172d2y211Z)
 
 ### 2. Gulpのインストール
 
@@ -45,7 +46,7 @@ Homebrew経由でのインストールでも[オケオケオッケー](http://d.
 
 ### 3. ディレクトリに移動
 
-    $ cd eri
+    $ cd erichika
     
 ダウンロードして解凍したり`git clone`したディレクトリのことです
 
@@ -60,9 +61,18 @@ Homebrew経由でのインストールでも[オケオケオッケー](http://d.
 `http://localhost:3000/`というURLでブラウザの新規タブが開くので、あとはファイルを変更するたびにブラウザが自動で更新されます。
 
 
+## HTML
+
+Erichikaでは`index.html`に、おそらくよく使うであろうコードを、最低限まとめてあります。適宜追記や削除をしてお使いください。
+
+* `head`タグ内のOGPタグの設定(Facebook/Twitter/Google+)
+* CDN等を利用したよく使いそうなjQueryプラグイン
+* FacebookのいいねボタンやGoogle Analyticsなどに必要なJavaScriptのコード
+
+
 ## Sass(SASS)
 
-EriではCSSの拡張メタ言語にSass(SASS)を採用しています。
+ErichikaではCSSの拡張メタ言語にSass(SASS)を採用しています。
 
 ### ファイル構成
 
@@ -84,8 +94,8 @@ EriではCSSの拡張メタ言語にSass(SASS)を採用しています。
 | mixin名 | なにできるか |
 |-----|-----|
 | clearFix | clearfixする |
-| textReplace | テキストを画像置換する<br>`text-indent: -9999px;`のやつじゃないのでSEO的にちょっとマシと思われます |
-| inlineBlock | `display: inline-block;`を昔のIEにも対応させたもの |
+| textReplace | テキストを画像置換する |
+| inlineBlock | `display: inline-block;`をIE7にも対応させたもの |
 | mediaquery-* | Media Queriesの設定 |
 | animation | CSS3 Animationのextend |
 
@@ -149,9 +159,17 @@ Media Queriesをまとめて書けるファイルです。
 ブレークポイントなどを変更したい場合は、`_mixin.sass`にある`// Media Queries Settings`のmixinを修正してください。
 
 
+## CoffeeScript
+
+ErichikaではJavaScriptの拡張メタ言語にCoffeeScriptを採用しています。
+
+`script.coffee`にコードを書くと`script.js`としてコンパイルされます。  
+その他の使用するライブラリなどは`lib`フォルダに入れておくと管理しやすいのでオススメです
+
+
 ## Image
 
-Eriでは、Gulpの実行時に`img`ディレクトリを監視して、画像が追加されると`dist/img`ディレクトリに圧縮した画像を保存します。納品時には`img`ディレクトリではなく`dist/img`ディレクトリを代わりに用意したりすると良いと思います。  
+Erichikaでは、Gulpの実行時に`img`ディレクトリを監視して、画像が追加されると`dist/img`ディレクトリに圧縮した画像を保存します。納品時には`img`ディレクトリではなく`dist/img`ディレクトリを代わりに用意したりすると良いと思います。  
 
 ### 対応拡張子
 
@@ -162,7 +180,7 @@ Eriでは、Gulpの実行時に`img`ディレクトリを監視して、画像�
 
 ## License
 
-[MIT License](https://github.com/ryonakae/eri/blob/master/LICENSE)
+[MIT License](https://github.com/ryonakae/erichika/blob/master/LICENSE)
 
 ### Components
 
@@ -196,10 +214,18 @@ Web Designer in Kyoto, Japan.
 
 [Rin](https://github.com/sanographix/rin-html-template)
 
+
 ## Changelog
 
+### 1.1.2 (2014-08-16)
+* 名前変更
+* `index.html`から不要なコードを削除
+* `script.coffee`から不要なコードを削除
+* `_module.sass`に`.clearfix`を追加
+* サンプル画像を削除
+
 ### 1.1.1 (2014-08-10)
-* [名前変更](http://d.pr/i/Eq7v)
+* 名前変更
 * `.sass`と`.scss`の両方を監視対象に
 
 ### 1.1.0 (2014-08-07)
