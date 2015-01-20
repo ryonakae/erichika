@@ -1,181 +1,41 @@
 # Erichika
 
-## A Cute and Clever HTML5 Template.
+## A Cute and Clever HTML5 & CSS3 Template.
 
-Erichikaは[かしこくてかわいい](http://cl.ly/image/3F1j3r0u1I00)HTML5テンプレートです。
-
-
-## Download
-
-[こちら](https://github.com/ryonakae/erichika/archive/master.zip)からダウンロードしてください。もしくは`git clone`でリポジトリをクローンしてください。
-
-### git clone
-
-    $ git clone https://github.com/ryonakae/erichika.git
+[かしこくてかわいい](http://cl.ly/image/3F1j3r0u1I00)、HTML5 & CSS3テンプレート
 
 
 ## Feature
 
 * (かしこくてかわいい)HTML5+CSS3テンプレート
-* Sass(SASS) + CoffeeScriptで開発ができる
-* Gulpでのブラウザ自動リロードや画像の圧縮に対応
+* Slim + Sass(SASS) + CoffeeScript
+* Sassは[Bourbon](http://bourbon.io/) & [Neat](http://neat.bourbon.io/)の使用を前提とした構成
+* Gulpでの自動リロードやコンパイル、画像の圧縮に対応
 
 
+## Require
 
-## Gulp
+* Node.js
+  - Gulp
+* Ruby
+  - Bundler
 
-Erichikaは[Gulp](http://gulpjs.com/)を使用しての開発が可能です。
+## Set Up
+### 1. Download
 
-### Gulpで何やってるか
-* [BrowserSync](http://www.browsersync.io/)によるブラウザの自動リロード
-* Sassのコンパイル + [Autoprefixer](https://github.com/ai/autoprefixer)でベンダープレフィックスを自動付与
-* CoffeeScriptのコンパイル
-* 画像ファイルの圧縮
+    $ git clone https://github.com/ryonakae/erichika.git
 
+### 2. Install Node Modules
 
-## How to use KKE
-### 1. Nodeのインストール
-[node.js](http://nodejs.org/)を参照してnode.jsをインストールしてください。  
-Homebrew経由でのインストールでも[オケオケオッケー](http://cl.ly/image/36172d2y211Z)
+	$ npm install
 
-### 2. Gulpのインストール
+### 3. Install RubyGems with Bundler
 
-    $ npm install --global gulp
+	$ bundle install --path vendor/bundle
 
-時と場合によっては`$ sudo npm install --global gulp`だったりします
+### 4. Run Gulp
 
-### 3. ディレクトリに移動
-
-    $ cd erichika
-    
-ダウンロードして解凍したり`git clone`したディレクトリのことです
-
-### 4. Gulpプラグインをインストール
-
-    $ npm install
-
-### 5. Gulpの実行
-
-    $ gulp
-
-`http://localhost:3000/`というURLでブラウザの新規タブが開くので、あとはファイルを変更するたびにブラウザが自動で更新されます。
-
-
-## HTML
-
-Erichikaでは`index.html`に、おそらくよく使うであろうコードを、最低限まとめてあります。適宜追記や削除をしてお使いください。
-
-* `head`タグ内のOGPタグの設定(Facebook/Twitter/Google+)
-* CDN等を利用したよく使いそうなjQueryプラグイン
-* FacebookのいいねボタンやGoogle Analyticsなどに必要なJavaScriptのコード
-
-
-## Sass(SASS)
-
-ErichikaではCSSの拡張メタ言語にSass(SASS)を採用しています。
-
-### ファイル構成
-
-* _normalize.scss
-* _mixin.sass
-* _variable.sass
-* _grid.sass
-* _module.sass
-* _media-queries.sass
-
-### _normalize.scss
-
-[normalize.css](http://necolas.github.io/normalize.css/)の拡張子を`.scss`に変更したものです。
-
-### _mixin.sass
-
-便利なmixinをまとめたものです。
-
-| mixin名 | なにできるか |
-|-----|-----|
-| clearFix | clearfixする |
-| textReplace | テキストを画像置換する |
-| inlineBlock | `display: inline-block;`をIE7にも対応させたもの |
-| mediaquery-* | Media Queriesの設定 |
-| animation | CSS3 Animationのextend |
-
-#### CSS3 Animation
-
-mixinじゃなくてextendですが、CSSアニメーションを簡単に実装できるextendも利用できます。
-
-##### 呼び出すとき
-
-    .btn
-      @extend %animation
-
-      &:hover
-        opacity: 0.7
-        
-みたいに書くと、`.btn`にマウスオーバーした時に、アニメーションしながら透過します。
-
-### _variable.sass
-
-サイト全体の背景色や文字色など、共通して使える変数をまとめたものです。
-
-### _grid.sass
-
-簡単なグリッドシステムです。
-
-#### Example
-
-    <div class="l-container">
-      <div class="l-row">
-        <div class="l-grid-4">
-          Grid 4
-        </div>
-        <div class="l-grid-4">
-          Grid 4
-        </div>
-        <div class="l-grid-4">
-          Grid 4
-        </div>
-      </div>
-    </div>
-
-### _module.sass
-
-汎用性のあるクラスをまとめたものです。  
-ボタンなど、共通で使いまわすパーツ(モジュール)はこのファイルに書くと良さそうです。
-
-`.align-center`や`.mt10`のような汎用クラスを最初から用意しています。使用しない場合は無駄なので、削除やコメントアウトしつつお使いください。
-
-### _media-queries.sass
-
-Media Queriesをまとめて書けるファイルです。
-
-* Retinaディスプレイ
-* PC(大きい画面の場合)
-* PC
-* タブレット
-* タブレット(小さい画面の場合)
-* スマートフォン
-
-以上の場合のスタイルを書くことができます。  
-ブレークポイントなどを変更したい場合は、`_mixin.sass`にある`// Media Queries Settings`のmixinを修正してください。
-
-
-## CoffeeScript
-
-ErichikaではJavaScriptの拡張メタ言語にCoffeeScriptを採用しています。
-
-`script.coffee`にコードを書くと`script.js`としてコンパイルされます。  
-その他の使用するライブラリなどは`lib`フォルダに入れておくと管理しやすいのでオススメです
-
-
-## Image
-
-Erichikaでは、Gulpの実行時に`img`ディレクトリを監視して、画像が追加されると`dist/img`ディレクトリに圧縮した画像を保存します。納品時には`img`ディレクトリではなく`dist/img`ディレクトリを代わりに用意したりすると良いと思います。  
-
-### 対応拡張子
-
-* jpg
-* png
-* gif
+	$ gulp
 
 
 ## License
@@ -184,17 +44,17 @@ Erichikaでは、Gulpの実行時に`img`ディレクトリを監視して、画
 
 ### Components
 
+* Gulp.js: MIT license
+* Slim: MIT license
+* Sass: MIT license
+* Bourbon: MIT license
+* Neat: MIT license
+* CoffeeScript: MIT license
 * Normalize.css: MIT license
 * jQuery: MIT license
-* jQuery Easing: BSD license
-* jQuery Transit: MIT license
-* Retina.js: MIT license
 * Modernizr: MIT license
 * CssUserAgent: MIT license
 * html5shiv: MIT/GPL license
-* Gulp.js: MIT license
-* Sass: MIT license
-* CoffeeScript: MIT license
 
 
 ## Author
@@ -212,10 +72,17 @@ Web Designer in Kyoto, Japan.
 
 ## Special Thanks
 
-[Rin](https://github.com/sanographix/rin-html-template)
+* [Rin](https://github.com/sanographix/rin-html-template)
+* [gulp-template](https://github.com/310u8/gulp-template)
 
 
 ## Changelog
+### 2.0 (2015-01-20)
+* 大幅な構成の見直し
+* Slim対応
+* Bourbon & Neat使うようにした
+* Bundler対応
+* gulpfile書き直し
 
 ### 1.1.2 (2014-08-16)
 * 名前変更
