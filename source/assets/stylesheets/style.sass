@@ -1,0 +1,26 @@
+@charset "utf-8"
+
+
+// Bourbon & Neat
+@import bourbon
+@import neat
+
+// Reset & Normalize
+// @import options/_reset
+@import options/normalize
+
+// Variables
+@import variables/common
+@import variables/color
+
+// Mixin
+@import mixin
+
+
+// Common Styles
+*
+  +box-sizing(border-box)
+
+body
+  background-color: paletet("bg", "base")
+  color: palette("font", "base")

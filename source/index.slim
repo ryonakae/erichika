@@ -1,0 +1,82 @@
+doctype html
+/! かしこい！かわいい！＼ｴﾘｰﾁｶ!!／
+
+html lang="ja" prefix="og:http://ogp.me/ns# fb:http://www.facebook.com/2008/fbml"
+  head
+    meta charset="utf-8"
+    title KKE
+    / meta name="keywords" content=""
+    meta name="description" content=""
+    meta name="robots" content="index,follow"
+    meta name="viewport" content="width=device-width"
+    / link rel="canonical" href=""
+
+    / OGP
+    / meta property="fb:admins" content=""
+    / meta property="fb:app_id" content=""
+    meta property="og:title" content=""
+    meta property="og:type" content="website"
+    meta property="og:url" content=""
+    meta property="og:description" content=""
+    meta property="og:site_name" content=""
+    meta property="og:image" content=""
+    meta property="og:locale" content="ja_JP"
+    / meta name="twitter:site" value=""
+    / meta name="twitter:creator" value=""
+    / meta name="twitter:card" value="summary_large_image"
+    / link rel="author" href="https://plus.google.com/(Google+ ID)"
+
+    / StyleSheets, Icon
+    link rel="stylesheet" href="assets/stylesheets/style.css"
+    link rel="shortcut icon" href="assets/images/favicon.ico"
+    / link rel="apple-touch-icon-precomposed" href="assets/images/apple-touch-icon.png"
+
+    / Scripts
+    script src="assets/javascripts/lib.js"
+    script src="assets/javascripts/script.js"
+    /![if lt IE 9]
+      script src="//html5shiv.googlecode.com/svn/trunk/html5.js"
+
+  body
+    / Contents
+
+    /! Scripts
+    #fb-root
+    javascript:
+      // Twitter
+      !function(d,s,id){
+        var js,fjs=d.getElementsByTagName(s)[0],
+            p=/^http:/.test(d.location)?'http':'https';
+        if(!d.getElementById(id)){
+          js=d.createElement(s);
+          js.id=id;
+          js.src=p+'://platform.twitter.com/widgets.js';
+          fjs.parentNode.insertBefore(js,fjs);
+        }
+      }(document, 'script', 'twitter-wjs');
+
+      // Facebook
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
+      // Google+
+      window.___gcfg = {lang: 'ja'};
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/platform.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+
+      // Google Analytics
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-XXXXXXXX-X', 'auto');
+      ga('require', 'displayfeatures');
+      ga('send', 'pageview');

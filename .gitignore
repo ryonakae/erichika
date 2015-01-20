@@ -1,16 +1,11 @@
-# Ignore cache
-.sass-cache/
-.cache/
-
-# OSX
 .DS_Store
-Thumbs.db
-
-# Other
-*.codekit
 *.sublime-workspace
-# *.sublime-project
-node_modules/
+*.sublime-project
+Gemfile.lock
 
-# CSS Source Map
-css/*.css.map
+.bundle
+.sass-cache
+node_modules
+vendor
+
+build
