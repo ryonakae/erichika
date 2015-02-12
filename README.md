@@ -75,6 +75,9 @@ Web Designer in Kyoto, Japan.
 
 
 ## Change Log
+### 2.1.1 (2015-02-12)
+* package.jsonにcoffee-script書くの忘れてたので追記
+
 ### 2.1.0 (2015-02-12)
 * Bowerでライブラリ管理するようにした
   - `_normalize.scss`と`_reset.scss`もBower経由でダウンロード
