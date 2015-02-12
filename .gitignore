@@ -1,11 +1,12 @@
 .DS_Store
-*.sublime-workspace
-*.sublime-project
-Gemfile.lock
 
 .bundle
+vendor
+Gemfile.lock
+
 .sass-cache
 node_modules
-vendor
+
+bower_components
 
 build

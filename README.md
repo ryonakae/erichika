@@ -8,53 +8,51 @@
 ## Feature
 
 * (かしこくてかわいい)HTML5+CSS3テンプレート
-* Slim + Sass(SASS) + CoffeeScript
-* Sassは[Bourbon](http://bourbon.io/) & [Neat](http://neat.bourbon.io/)の使用を前提とした構成
-* Gulpでの自動リロードやコンパイル、画像の圧縮に対応
+* ファイル構成はSlim + Sass(SASS) + CoffeeScript
+  - Sassは[Bourbon](http://bourbon.io/) & [Neat](http://neat.bourbon.io/)の使用を前提とした構成
+* タスクランナーにはGulpを採用
+  - BrowserSyncでのブラウザ自動リロード
+  - Slim/Sass/CoffeeScriptのコンパイル
+  - CSS/JS/画像のMinify
+* パッケージ管理にはnpm/Bundler/Bowerを採用
 
-
-## Require
-
-* Node.js
-  - Gulp
-* Ruby
-  - Bundler
 
 ## Set Up
-### 1. Download
+### 1. 必要なツールのインストール
+※すでにインストール済みなら飛ばす
 
-    $ git clone https://github.com/ryonakae/erichika.git
+#### Node.jsのインストール
+[公式サイト](http://nodejs.jp/nodejs.org_ja/docs/v0.10/)からインストール
 
-### 2. Install Node Modules
+#### Rubyのインストール
+Macなら最初からRubyがインストールされているので、特に何もしなくて大丈夫です
 
-	$ npm install
+#### Bundlerのインストール
 
-### 3. Install RubyGems with Bundler
+    $ gem install bundler
 
-	$ bundle install --path vendor/bundle
+### 2. リポジトリのclone
 
-### 4. Run Gulp
+    $ mkdir xxxx
+    $ cd xxxxx
+    $ git clone https://github.com/ryonakae/erichika.git .
 
-	$ gulp
+### 3. パッケージをインストール
+    
+    $ npm install
+    $ bower install
+    $ bundle install --path=vendor/bundle
+
+### 4. Gulp実行
+
+    $ gulp
+    
+[ガンガンGulpガーンといこう！](http://cl.ly/image/0e2x3D1M3J1p)
 
 
 ## License
 
 [MIT License](https://github.com/ryonakae/erichika/blob/master/LICENSE)
-
-### Components
-
-* Gulp.js: MIT license
-* Slim: MIT license
-* Sass: MIT license
-* Bourbon: MIT license
-* Neat: MIT license
-* CoffeeScript: MIT license
-* Normalize.css: MIT license
-* jQuery: MIT license
-* Modernizr: MIT license
-* CssUserAgent: MIT license
-* html5shiv: MIT/GPL license
 
 
 ## Author
@@ -76,8 +74,16 @@ Web Designer in Kyoto, Japan.
 * [gulp-template](https://github.com/310u8/gulp-template)
 
 
-## Changelog
-### 2.0 (2015-01-20)
+## Change Log
+### 2.1.0 (2015-02-12)
+* Bowerでライブラリ管理するようにした
+  - `_normalize.scss`と`_reset.scss`もBower経由でダウンロード
+  - `cssua.js`がBowerに登録されてないから消した
+* BrowserSyncを2.0.1にアップデート、合わせて`gulpfile.coffee`修正
+* gulp-ruby-sassを1.0.0-alphaにアップデート、合わせて`gulpfile.coffee`修正
+* README加筆修正
+
+### 2.0.0 (2015-01-20)
 * 大幅な構成の見直し
 * Slim対応
 * Bourbon & Neat使うようにした

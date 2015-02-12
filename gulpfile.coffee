@@ -1,10 +1,12 @@
 # Define
 gulp         = require 'gulp'
 autoprefixer = require 'gulp-autoprefixer'
+bower        = require 'main-bower-files'
 browserSync  = require 'browser-sync'
 cache        = require 'gulp-cache'
 coffee       = require 'gulp-coffee'
 concat       = require 'gulp-concat'
+filter       = require 'gulp-filter'
 imagemin     = require 'gulp-imagemin'
 minifyCss    = require 'gulp-minify-css'
 plumber      = require 'gulp-plumber'
@@ -13,6 +15,7 @@ rimraf       = require 'rimraf'
 runSequence  = require 'run-sequence'
 sass         = require 'gulp-ruby-sass'
 slim         = require 'gulp-slim'
+sourcemaps   = require 'gulp-sourcemaps'
 streamqueue  = require 'streamqueue'
 uglify       = require 'gulp-uglify'
 
@@ -20,6 +23,9 @@ uglify       = require 'gulp-uglify'
 # Clean Build Directory
 gulp.task 'clean', (cb) ->
   rimraf 'build/', cb
+
+gulp.task 'clean-sass-options', (cb) ->
+  rimraf 'source/assets/stylesheets/options/', cb
 
 
 # Clear Cache
@@ -29,7 +35,7 @@ gulp.task 'clear', (done) ->
 
 # BrowserSync
 gulp.task 'browserSync', ->
-  browserSync.init null,
+  browserSync
     # open: false
     # notify: false
     server:
@@ -49,20 +55,27 @@ gulp.task 'slim', ->
 
 # Sass
 gulp.task 'sass', ->
+  cssFilter = filter '**/*.scss'
+
   gulp
-    .src 'source/assets/stylesheets/**/*.{sass,scss}'
-    .pipe plumber()
-    .pipe sass
-      style: 'expanded'
-      require: ['bourbon', 'neat']
-      # noCache: true
-      bundleExec: true
-    .pipe autoprefixer 'last 2 version', 'ie 8', 'ie 9'
-    .pipe minifyCss
-      keepSpecialComments: 0
-    .pipe gulp.dest 'build/assets/stylesheets/'
-    .pipe browserSync.reload
-      stream: true
+    .src bower()
+    .pipe cssFilter
+    .pipe gulp.dest 'source/assets/stylesheets/options/'
+    .pipe cssFilter.restore()
+
+  sass 'source/assets/stylesheets/',
+    style: 'expanded'
+    require: ['bourbon', 'neat']
+    bundleExec: true
+    sourcemap: true
+  .on 'error', (err) ->
+    console.error 'Error!', err.message
+  .pipe autoprefixer 'last 2 version', 'ie 8', 'ie 9'
+  .pipe minifyCss
+    keepSpecialComments: 0
+  .pipe gulp.dest 'build/assets/stylesheets/'
+  .pipe browserSync.reload
+    stream: true
 
 
 # CoffeeScript
@@ -79,11 +92,13 @@ gulp.task 'coffee', ->
 
 # JavaScript
 gulp.task 'javaScript', ->
-  streamqueue objectMode: true,
-      gulp.src 'source/assets/javascripts/core/jquery.min.js'
-      gulp.src 'source/assets/javascripts/lib/*.js'
+  jsFilter = filter '**/*.js'
+
+  gulp
+    .src bower()
+    .pipe jsFilter
     .pipe concat 'lib.js'
-    # .pipe uglify()
+    .pipe uglify()
     .pipe gulp.dest 'build/assets/javascripts/'
     .pipe browserSync.reload
       stream: true
@@ -132,4 +147,4 @@ gulp.task 'watch', ->
 
 # Default Task
 gulp.task 'default', ->
-  runSequence 'clean', ['slim', 'sass', 'coffee', 'javaScript', 'imageMin', 'copy'], 'browserSync', 'watch'
+  runSequence 'clean', 'clean-sass-options', ['slim', 'sass', 'coffee', 'javaScript', 'imageMin', 'copy'], 'browserSync', 'watch'
